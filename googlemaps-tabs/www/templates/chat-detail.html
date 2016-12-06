@@ -1,0 +1,93 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="{{chat.name}}">
+    <ion-content class="padding">
+        
+        
+        <div ng-app="starter">
+        <script src ="js/message.js"></script>
+<!--        <script src ="css/message.css"></script>-->
+        
+        
+         <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+    <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+        <div ng-repeat="message in messages"
+           ng-class="{other: message.userId != myId}"
+           class="messages">
+
+        <div class="message" ng-class="{'slide-right': hideTime, '': !hideTime}">
+          <span>{{ message.text }}</span>
+        </div>
+
+        <div class="time" ng-class="{'slide-right': hideTime, '': !hideTime}">{{message.time}}</div>
+
+
+      </div>
+        
+          <ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
+      <label class="item-input-wrapper">
+        <input type="text" placeholder="Type your message" on-return="sendMessage(); closeKeyboard()" ng-model="data.message" on-focus="inputUp()" on-blur="inputDown()" />
+      </label>
+      <button class="button button-clear" ng-click="sendMessage()">
+        Send
+      </button>
+    </ion-footer-bar>
+        </div>
+        
+       <div class="hero-contain" >
+<!--  <img src="http://lorempixel.com/1500/1000/" class="hero-img">-->
+           <img src="img/chatImage.jpg"  width="90%" height="200%" >
+
+  <div class="hero-content">
+<!--    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a enim eu risus accumsan venenatis. Donec venenatis nunc ac tellus tempor, ac rutrum lorem semper. Suspendisse pulvinar elit sed luctus pulvinar. Donec id ultricies dui. Pellentesque suscipit nulla maximus, mollis urna laoreet, tempor tortor.</p>-->
+  </div>
+</div>
+     <style>
+        
+        @import "compass/css3";
+
+.hero-contain {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+/*
+.hero-img {
+  max-width: 300%;
+}
+*/
+
+.hero-content {
+  position: relative;
+  background: rgba(255, 255, 255, .5);
+  padding: 50px;
+}
+
+@media (min-width: 800px) {
+  .hero-img {
+    position: absolute;
+  }
+  
+  .hero-content {
+      text-align: left;
+    float: right;
+    width: 200%;
+    margin: 20px;
+  }
+}
+       
+         
+</style>
+        
+<script>
+   
+  
+</script>
+
+    </ion-content>
+</ion-view>
